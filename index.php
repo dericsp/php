@@ -23,38 +23,62 @@
 //
 //echo $$variableName;
 
-$myArray = array("Eric", "Kirsten", "Tommy", "Ralphie");
+//$myArray = array("Eric", "Kirsten", "Tommy", "Ralphie");
+//
+//$myArray[] = "katie";
+//
+//print_r($myArray);
+//
+//echo $myArray[1];
+//
+//echo "<br><br>";
+//
+//$anotherArray[0] = "pizza";
+//
+//$anotherArray[1] = "yoghurt";
+//
+//$anotherArray[5] = "coffe";
+//
+//$anotherArray["MyFavouriteFood"] = "ice cream";
+//
+//print_r($anotherArray);
+//
+//echo "<br><br>";
+//
+//$thirdArray = array(
+//	"France" => "French", 
+//	"USA" => "English", 
+//	"Germany" => "German");
+//
+//unset($thirdArray["France"]);
+//
+//print_r($thirdArray);
+//
+//echo sizeOf($thirdArray);
 
-$myArray[] = "katie";
+$user = "eric";
 
-print_r($myArray);
+if ($user == "rob") {
+	echo "Hello Rob!";
+}else {
+	echo "I don't know you";
+}
 
-echo $myArray[1];
+$age = 18;
 
 echo "<br><br>";
 
-$anotherArray[0] = "pizza";
+if ($age >= 18 || $user == "rob") {
+	
+	echo "You are more than 18 years old";
+}else {
+	
+	echo "You are too young !";
+}
 
-$anotherArray[1] = "yoghurt";
 
-$anotherArray[5] = "coffe";
 
-$anotherArray["MyFavouriteFood"] = "ice cream";
 
-print_r($anotherArray);
-
-echo "<br><br>";
-
-$thirdArray = array(
-	"France" => "French", 
-	"USA" => "English", 
-	"Germany" => "German");
-
-unset($thirdArray["France"]);
-
-print_r($thirdArray);
-
-echo sizeOf($thirdArray);
 
 
 ?>
