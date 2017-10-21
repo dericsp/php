@@ -56,25 +56,47 @@
 //
 //echo sizeOf($thirdArray);
 
-$user = "eric";
+//$user = "eric";
+//
+//if ($user == "rob") {
+//	echo "Hello Rob!";
+//}else {
+//	echo "I don't know you";
+//}
+//
+//$age = 18;
+//
+//echo "<br><br>";
+//
+//if ($age >= 18 || $user == "rob") {
+//	
+//	echo "You are more than 18 years old";
+//}else {
+//	
+//	echo "You are too young !";
+//}
 
-if ($user == "rob") {
-	echo "Hello Rob!";
-}else {
-	echo "I don't know you";
-}
+//$family = array("Rob", "Kirsten", "Tommy", "Ralphie");
 
-$age = 18;
+//$numArray = ;
+//echo $numArray;
+//
+//foreach ($family as $key => $value) {
+//	
+//	$family[$key] = $value." Percival";
+//	echo "Array item ".$key." is ".$value."<br>";
+//}
+//
+//
+//for ($i = 0; $i < sizeOf($family); $i++) {
+//	echo $family[$i]."<br>";
+//}
 
-echo "<br><br>";
 
-if ($age >= 18 || $user == "rob") {
-	
-	echo "You are more than 18 years old";
-}else {
-	
-	echo "You are too young !";
-}
+
+//for ($i = 10; $i >= 0; $i--) {
+//	echo $i."<br>";
+//}
 
 
 
