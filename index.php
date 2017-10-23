@@ -98,9 +98,74 @@
 //	echo $i."<br>";
 //}
 
+//	$i = 0;
+//	
+//	while ($i <= sizeOf($family)) {
+//		
+//		
+//		echo $family[$i]."<br>";
+//		$i++;
+//			
+//			
+//	}
 
+//print_r($_GET);
 
+//
+//
+//if (is_numeric($_GET['number']) && $_GET['number'] > 0 && $_GET['number'] == round($_GET['number'], 0) ) {
+//	$i = 2;
+//	$isPrime = true;
+//	
+//	while ($i < $_GET['number']) {
+//		
+//		if ($_GET['number'] % $i ==0) {
+////			Number is not prime
+//			
+//			$isPrime = false;
+//		}
+//		
+//		
+//		$i++;
+//	}
+//	
+//	if ($isPrime) {
+//		echo "<p>".$i."is a prime number! </p>";
+//	}else {
+//		echo "<p>".$i." is not prime.</p>";
+//	}
+//
+//}else if ($_GET) {
+////	User has submitted something wich is not a positive number
+//	echo "<p> Please enter a positive number </p>";
+//}
+//print_r($_POST);
+$arrayNames = ["Eric", "Aline", "Helena"];
 
+if ($_POST) {
+	$isKnown = false;
+	foreach($arrayNames as $value) {
+		if ($value == $_POST['name']) {
+			$isKnown = true;
+		}
+	}
+	
+	if($isKnown) {
+		echo "Hi there ".$_POST['name']."!";
+	}else {
+		echo "I dont't know you";
+	}
+	
+}
+
+	
 
 
 ?>
+
+
+	<p>Hello What's your name?</p>
+<form method="post">
+	<input name="name" type="text">
+	<input type="submit" value="Go!">
+</form>
