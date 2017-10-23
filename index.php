@@ -175,28 +175,29 @@
 	$error = "";
 	$sucessMessage = "";
 
-if ($_POST) {
+    if ($_POST) {
 	
-	if(!$_POST["email"]) {
+	   if(!$_POST["email"]) {
 		$error .= "An email address is requeired<br>";
-	}
+	   }
 	
-	if(!$_POST["content"]) {
+	   if(!$_POST["content"]) {
 		$error .= "A content is requeired<br>";
-	}
+	   }
 	
-	if(!$_POST["subject"]) {
+	   if(!$_POST["subject"]) {
 		$error .= "A subject  is requeired<br>";
-	}
+	   }
 	
 	
-if ($_POST['email'] && filter_var($_POST["email"], FILTER_VALIDATE_EMAIL) == false) {
+        if ($_POST['email'] && filter_var($_POST["email"], FILTER_VALIDATE_EMAIL) == false) {
 	
 		$error .= "The email address is invalid<br>";
-}
-	if ($error != "") {
-		$error = '<div class="alert alert-danger" role="alert"><p><strong>There were error(s) in your form</strong></p>'.$error.' </div>';
-	} else {
+        }
+    
+	   if ($error != "") {
+		  $error = '<div class="alert alert-danger" role="alert"><p><strong>There were error(s) in your form</strong></p>'.$error.' </div>';
+	   } else {
 		
 		$emailTo = "dericsp@gmail.com";
 		
@@ -209,11 +210,11 @@ if ($_POST['email'] && filter_var($_POST["email"], FILTER_VALIDATE_EMAIL) == fal
 			if (mail($emailTo, $subject, $content, $headers)) {
 	
 				$sucessMessage = '<div class="alert alert-success" role="alert"><p><strong>Your message was sent.</strong></p>';
-}else {
-	$error = '<div class="alert alert-danger" role="alert"><p><strong>Your message couldn\'t be sent - please try again later.</strong></p>';	
-}
-	}
-}
+            }else {
+                $error = '<div class="alert alert-danger" role="alert"><p><strong>Your message couldn\'t be sent - please try again later.</strong></p>';	
+            }
+       }
+    }
 
 
 ?>
@@ -252,7 +253,7 @@ if ($_POST['email'] && filter_var($_POST["email"], FILTER_VALIDATE_EMAIL) == fal
 					<label for="exampleTextarea">What you like to ask us?</label>
 					<textarea class="form-control" id="content" name="content" rows="3"></textarea>
 				</div>
-				<button type="submit" id="submit" class="btn btn-primary">Submit</button>
+				<button type="submit"  id="submit" class="btn btn-primary">Submit</button>
 			</form>
 		</div>
 
@@ -266,7 +267,6 @@ if ($_POST['email'] && filter_var($_POST["email"], FILTER_VALIDATE_EMAIL) == fal
 
 		<script type="text/javascript">
 			$("form").submit(function(e) {
-				e.preventDefault();
 
 				var error = "";
 
@@ -278,7 +278,7 @@ if ($_POST['email'] && filter_var($_POST["email"], FILTER_VALIDATE_EMAIL) == fal
 					error += "The subject field is required<br>";
 				}
 
-				$("#error").html(error);
+//				$("#error").html(error);
 
 				if ($("#content").val() == "") {
 					error += "The content field is required";
@@ -287,9 +287,11 @@ if ($_POST['email'] && filter_var($_POST["email"], FILTER_VALIDATE_EMAIL) == fal
 				if (error != "") {
 
 					$("#error").html('<div class="alert alert-danger" role="alert"><p><strong>There were error(s) in your form</strong></p>' + error + ' </div>');
+                    
+                    return false;
 
 				} else {
-					$("form").off("submit").submit();
+					return true;
 				}
 			});
 
