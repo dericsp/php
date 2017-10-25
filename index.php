@@ -222,162 +222,221 @@ include("included.php");
 
 ?>
 
-	<!--
-	<!DOCTYPE html>
-	<html lang="en">
+<!--
+<!DOCTYPE html>
+<html lang="en">
 
-	<head>
+<head>
 -->
-	<!-- Required meta tags -->
-	<!--
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
--->
-
-	<!-- Bootstrap CSS -->
-	<!--
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-	</head>
-
-	<body>
-		<div class="container">
-			<h1>Get in Touch!</h1>
-
-			<div id="error">
-				<? echo $error.$sucessMessage; ?>
-			</div>
-
-			<form method="post">
-				<div class="form-group">
-					<label for="email">Email address</label>
-					<input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="Your email">
-					<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-				</div>
-				<div class="form-group">
-					<label for="subject">Subject</label>
-					<input type="text" class="form-control" id="subject" name="subject">
-				</div>
-				<div class="form-group">
-					<label for="exampleTextarea">What you like to ask us?</label>
-					<textarea class="form-control" id="content" name="content" rows="3"></textarea>
-				</div>
-				<button type="submit"  id="submit" class="btn btn-primary">Submit</button>
-			</form>
-		</div>
+<!-- Required meta tags -->
+<!--
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 -->
 
+<!-- Bootstrap CSS -->
+<!--
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+</head>
+
+<body>
+<div class="container">
+<h1>Get in Touch!</h1>
+
+<div id="error">
+<? echo $error.$sucessMessage; ?>
+</div>
+
+<form method="post">
+<div class="form-group">
+<label for="email">Email address</label>
+<input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="Your email">
+<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+</div>
+<div class="form-group">
+<label for="subject">Subject</label>
+<input type="text" class="form-control" id="subject" name="subject">
+</div>
+<div class="form-group">
+<label for="exampleTextarea">What you like to ask us?</label>
+<textarea class="form-control" id="content" name="content" rows="3"></textarea>
+</div>
+<button type="submit"  id="submit" class="btn btn-primary">Submit</button>
+</form>
+</div>
+-->
 
 
 
-	<!-- jQuery first, then Tether, then Bootstrap JS. -->
-	<!--
-		<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
 
-		<script type="text/javascript">
-			$("form").submit(function(e) {
+<!-- jQuery first, then Tether, then Bootstrap JS. -->
+<!--
+<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
 
-				var error = "";
+<script type="text/javascript">
+$("form").submit(function(e) {
 
-				if ($("#email").val() == "") {
-					error += "The email field is required<br>";
-				}
+var error = "";
 
-				if ($("#subject").val() == "") {
-					error += "The subject field is required<br>";
-				}
+if ($("#email").val() == "") {
+error += "The email field is required<br>";
+}
+
+if ($("#subject").val() == "") {
+error += "The subject field is required<br>";
+}
 
 //				$("#error").html(error);
 
-				if ($("#content").val() == "") {
-					error += "The content field is required";
-				}
+if ($("#content").val() == "") {
+error += "The content field is required";
+}
 
-				if (error != "") {
+if (error != "") {
 
-					$("#error").html('<div class="alert alert-danger" role="alert"><p><strong>There were error(s) in your form</strong></p>' + error + ' </div>');
-                    
-                    return false;
+$("#error").html('<div class="alert alert-danger" role="alert"><p><strong>There were error(s) in your form</strong></p>' + error + ' </div>');
 
-				} else {
-					return true;
-				}
-			});
+return false;
 
-		</script>
-	</body>
+} else {
+return true;
+}
+});
 
-	</html>
+</script>
+</body>
+
+</html>
 -->
 
 <?php 
-	if ($_GET['city']) {
-		$forecastPage = file_get_contents("http://www.weather-forecast.com/locations/London/forecasts/latest");
-		
-		$pageArray = explode('3 Day Weather Forecast Summary:</b><span class="read-more-small"><span class="read-more-content"> <span class="phrase">', $forecastPage);
-		
-		$secondPageArray = explode('</span></span></span>', $pageArray[1]);
-		echo $secondPageArray[0];
-	}
+
+$weather = '';
+$error = '';
+
+
+if (array_key_exists('city', $_GET)) { 
+$local = ($_GET['city']);
+
+$local = str_replace(' ', '', $local);
+
+$headers = @get_headers("http://www.weather-forecast.com/locations/".$local."/forecasts/latest");
+//		print_r($headers);
+
+if ($headers[16] == 'Status: 404 Not Found') {
+$error = 'The city was not found.';
+
+}else {
+
+
+$forecastPage = file_get_contents("http://www.weather-forecast.com/locations/".$local."/forecasts/latest");
+
+$pageError = explode('title', $forecastPage);
+
+
+
+$pageArray = explode('3 Day Weather Forecast Summary:</b><span class="read-more-small"><span class="read-more-content"> <span class="phrase">', $forecastPage);
+
+
+if (sizeOf($pageArray) > 1) {
+
+
+
+$secondPageArray = explode('</span></span></span>', $pageArray[1]);
+
+if (sizeOf($secondPageArray) > 1) {
+
+$weather = $secondPageArray[0];
+
+} else {
+
+$error = 'The city was not found.';
+
+}
+
+} else {
+
+$error = 'The city was not found.';
+
+}
+}
+
+
+}
 ?>
-	<!doctype html>
-	<html lang="en">
+<!doctype html>
+<html lang="en">
 
-	<head>
-		<title>Weather Scraper</title>
-		<!-- Required meta tags -->
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<head>
+<title>Weather Scraper</title>
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-		<!-- Bootstrap CSS -->
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
-	</head>
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+</head>
 
-	<body>
+<body>
 
-		<style type="text/css">
-			html {
-				background: url(background.jpeg) no-repeat center center fixed;
-				-webkit-background-size: cover;
-				-moz-background-size: cover;
-				-o-background-size: cover;
-				background-size: cover;
-			}
+<style type="text/css">
+html {
+background: url(background.jpeg) no-repeat center center fixed;
+-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+background-size: cover;
+}
 
-			body {
-				background: none;
-			}
+body {
+background: none;
+}
 
-			.container {
-				text-align: center;
-				margin-top: 200px;
-				width: 450px;
-			}
-			
-			input {
-				margin: 20px 0;
-			}
+.container {
+text-align: center;
+margin-top: 100px;
+width: 450px;
+}
 
-		</style>
-		<div class="container">
-			<h1>What's the Weather ?</h1>
-			
+input {
+margin: 20px 0;
+}
 
-			<form >
-				<div class="form-group">
-					<label for="city">Enter the name of a city.</label>
-					<input type="text" class="form-control" id="city" name="city" placeholder="Ex. London, Tokyo">
-				</div>
-				<button type="submit" class="btn btn-primary">Submit</button>
-			</form>
-		</div>
+.weather {
+margin-top: 20px;
+}
+</style>
+<div class="container">
+<h1>What's the Weather ?</h1>
 
-		<!-- Optional JavaScript -->
-		<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
-	</body>
 
-	</html>
+<form>
+<div class="form-group">
+<label for="city">Enter the name of a city.</label>
+<input type="text" class="form-control" id="city" name="city" placeholder="Ex. London, Tokyo" value="<?php echo $GET['city']; ?>">
+</div>
+<button type="submit" class="btn btn-primary">Submit</button>
+</form>
+<div class="weather">
+
+<?
+if ($weather) {
+
+echo '<div class="alert alert-success" role="alert">'.$weather.'</div>';
+} else {
+
+echo '<div class="alert alert-danger" role="alert">'.$error.'</div>';
+}
+;?>
+</div>
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+</body>
+
+</html>
